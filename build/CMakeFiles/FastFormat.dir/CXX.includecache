@@ -7,8 +7,6 @@
 #IncludeRegexTransform: 
 
 /home/alok/Codes/Tests/fast_format/FastFormat.hpp
-time.h
--
 limits
 -
 stdint.h
