@@ -1,5 +1,11 @@
 # fast_format
-Small, fast formating header based util in c++ : string to integer and double , double and integer to string fast conversion library 
+- Small, fast formating header based util in c++ : string to integer and double , double and integer to string fast conversion library 
+
+- specifying precision in digits after decimal, for double to string conversion - lesser needed, faster it is. 
+
+```
+  EFG::Core::Utils::Format<double, 3> format; // only 3 digits precison will be preserved in the double to string conversion
+```
 
 #### API
 1. toDouble(char* str)
@@ -16,7 +22,7 @@ Small, fast formating header based util in c++ : string to integer and double , 
    std::cout << EFG::Core::Utils::toInteger(value) << '\n';
    
 3. double value = 7.23; 
-   EFG::Core::Utils::Format<double> format; 
+   EFG::Core::Utils::Format<double> format; // default 9 digits precison after decimal 
    format.convert(value); 
    std::cout << format.toString() << '\n';
   

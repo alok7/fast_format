@@ -178,7 +178,7 @@ class fmt
 };
 
 
-// default 9 digit precision after decimal for deciaml
+// default 9 digit precisions after decimal for decimal number conversion to string
 template<typename T, size_t precision=9>
 class Format
 {
