@@ -18,7 +18,10 @@ double toDouble(const char* _str)
 {
   int64_t value = 0;
   while(_str && ' '==_str[0]) ++_str;
-  if(*_str=='\0') return value;
+  if(*_str=='\0')
+  {
+    perror("empty string!");
+  }
   int8_t sign = 1;
   if('-'==_str[0])
   {  
