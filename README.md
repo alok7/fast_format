@@ -1,5 +1,5 @@
 # fast_format
-- Small, fast formating header based util in c++ : string to integer and double , double and integer to string fast conversion library 
+- Small, fast formating header based util in c++ : string to integer/double , integer/double to string fast conversion library 
 
 - specifying precision in digits after decimal, for double to string conversion - lesser needed, faster it is. 
 
@@ -9,8 +9,8 @@
 ```
 
 #### API
-1. toDouble(char* str)
-2. toInteger(char* str)
+1. toDouble(const char* str)
+2. toInteger(const char* str)
 3. toString(int value)
 4. toString(double value)
 
