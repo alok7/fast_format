@@ -4,7 +4,8 @@
 - specifying precision in digits after decimal, for double to string conversion - lesser needed, faster it is. 
 
 ```
-  EFG::Core::Utils::Format<double, 3> format; // only 3 digits precison will be preserved in the double to string conversion
+  // only 3 digits precison will be preserved in the double to string conversion
+  EFG::Core::Utils::Format<double, 3> format; 
 ```
 
 #### API
