@@ -1,5 +1,5 @@
 # fast_format
-Small, fast formating header based util in c++
+Small, fast formating header based util in c++ : string to integer and double , double and integer to string fast conversion library 
 
 #### API
 1. toDouble(char* str)
