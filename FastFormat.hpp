@@ -1,6 +1,7 @@
 #pragma once
 #include <time.h>
 #include <limits>
+#include <stdint.h>
 
 namespace EFG
 {
@@ -8,13 +9,13 @@ namespace Core
 {
 namespace Utils
 {
-static const int64_t multipliers[]=
+static const constexpr int64_t multipliers[]=
 {
   1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000,
   10000000000, 100000000000,1000000000000
 };
 
-inline double toDouble(char* _str)
+double toDouble(const char* _str)
 {
   int64_t value = 0;
   while(_str && ' '==_str[0]) ++_str;
@@ -63,7 +64,7 @@ inline double toDouble(char* _str)
   return static_cast<double>(sign*value)/multipliers[mantisa];
 
 }
-inline int64_t toInteger(char* _str)
+int64_t toInteger(const char* _str)
 {
   return static_cast<int64_t>(toDouble(_str));
 }
@@ -127,7 +128,7 @@ class fmt
       if(sign < 0) mBuffer[idx--] = '-';
       
     }
-    inline void convert(int num)
+    void convert(int num)
     {
       short sign = num < 0 ? -1 : 1;
       num = num*sign;

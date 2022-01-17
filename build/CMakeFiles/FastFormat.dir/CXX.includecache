@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/alok/Codes/Tests/fast_format/FastFormat.hpp
+time.h
+-
+limits
+-
+stdint.h
+-
+
+/home/alok/Codes/Tests/fast_format/main.cpp
+stdio.h
+-
+FastFormat.hpp
+/home/alok/Codes/Tests/fast_format/FastFormat.hpp
+

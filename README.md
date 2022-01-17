@@ -20,7 +20,7 @@ Small, fast formating header based util in c++
    format.convert(value); 
    std::cout << format.toString() << '\n';
   
-4. double value = 723; 
+4. int value = 723; 
    EFG::Core::Utils::Format<int> format; 
    format.convert(value); 
    std::cout << format.toString() << '\n'; 
