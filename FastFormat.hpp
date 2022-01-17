@@ -71,7 +71,18 @@ int64_t toInteger(const char* _str)
   return static_cast<int64_t>(toDouble(_str));
 }
 
-template<size_t BUFFER_SIZE>
+template<size_t precisionDigits>
+struct DoublePrecision
+{
+  const static size_t value = 10*DoublePrecision<precisionDigits-1>::value;  
+};
+template<>
+struct DoublePrecision<0>
+{
+  const static size_t value = 1;  
+};
+
+template<size_t BUFFER_SIZE, size_t precisionDigits>
 class fmt
 {
   private:
@@ -86,7 +97,7 @@ class fmt
     {
       short sign = num < 0 ? -1 : 1;
       double num_abs = num*sign;
-      double precision = 1.0e+9; // 9 digit precision after decimal
+      size_t precision = DoublePrecision<precisionDigits>::value;
       size_t base = static_cast<size_t>(num_abs);
       size_t fraction = static_cast<size_t>((num_abs-static_cast<double>(base))*precision); 
       // group by two digit optimization
@@ -167,20 +178,21 @@ class fmt
 };
 
 
-template<typename T>
+// default 9 digit precision after decimal for deciaml
+template<typename T, size_t precision=9>
 class Format
 {
 
 };
 
-template<>
-class Format<int>: public fmt<std::numeric_limits<unsigned long long>::digits10+2>
+template<size_t precision>
+class Format<int, precision>: public fmt<std::numeric_limits<unsigned long long>::digits10+2, precision>
 {
 
 };
 
-template<>
-class Format<double>: public fmt<2*(std::numeric_limits<unsigned long long>::digits10+2)>
+template<size_t precision>
+class Format<double, precision>: public fmt<2*(std::numeric_limits<unsigned long long>::digits10+2), precision>
 {
 
 };
