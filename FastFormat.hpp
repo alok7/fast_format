@@ -97,7 +97,7 @@ class fmt
     {
       return &mBuffer[idx+1];
     }
-    inline void convert(double num)
+    void convert(double num)
     {
       short sign = num < 0 ? -1 : 1;
       double num_abs = num*sign;
