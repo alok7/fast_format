@@ -89,6 +89,10 @@ class fmt
     char mBuffer[BUFFER_SIZE];
     uint8_t idx = BUFFER_SIZE -1;
   public:
+    fmt()
+    {
+      mBuffer[idx--] = '\0';
+    }
     inline char* toString()
     {
       return &mBuffer[idx+1];
